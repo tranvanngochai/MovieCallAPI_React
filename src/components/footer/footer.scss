@@ -1,0 +1,42 @@
+@use "../../scss/" as *;
+
+.footer {
+  position: relative;
+  padding: 6rem 2rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom;
+
+  &__content {
+    // max-width: 1000px;
+
+    &__logo {
+      @include flex(center, center);
+      margin-bottom: 3rem;
+    }
+
+    &__menus {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      color: darkgrey;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+
+      @include mobile {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    &__menu {
+      @include flex(flex-start, flex-start);
+      flex-direction: column;
+      margin-top: 1rem;
+      justify-self: center;
+      font-size: 1.5rem;
+      font-weight: 600;
+
+      & > * ~ * {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
